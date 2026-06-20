@@ -57,7 +57,7 @@ class Lexer():
                 self.advance()
 
             elif self.isInt(self.at()):
-                while self.isInt(self.at()) and self.curr < len(self.src):
+                while self.curr < len(self.src) and self.isInt(self.at()):
                     tmp += self.at()
                     self.advance()
                 self.toks.append(Tok(TokType.INT, int(tmp)))
